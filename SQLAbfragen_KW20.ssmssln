@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 18.00
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "SQLAbfragen_KW20", "SQLAbfragen_KW20\SQLAbfragen_KW20.ssmssqlproj", "{74C810E7-6F82-42D5-AC16-BA090CE962DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74C810E7-6F82-42D5-AC16-BA090CE962DA}.Default|Default.ActiveCfg = Default
+		{58B92C1E-E6EE-48C9-BC73-9D2FB7070B79}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA20A6EA-B8CC-4F3D-B9F4-370C8749A8F2}
+	EndGlobalSection
+EndGlobal
