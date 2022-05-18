@@ -24,3 +24,18 @@ ORDER BY Geschäftsjahr, CompanyName DESC
 
 SELECT AVG(FREIGHT) FROM Orders
 
+
+
+
+
+
+SELECT p.ProductName,
+year(Orderdate) as Geschäftsjahr,
+SUM(od.Quantity*p.UnitPrice) OVER() as GesamtUmsatzAlleProdukte,
+SUM(od.Quantity*p.UnitPrice) OVER(PARTITION BY ProductName) as UmsatzSummeProProdukt,
+SUM(od.Quantity*p.UnitPrice) OVER(PARTITION BY ProductName, year(Orderdate)) as UmsatzSummeProProduktProJahr
+FROM Products p
+JOIN [Order Details] od ON p.ProductID = od.ProductID
+JOIN Orders o ON o.OrderId = od.OrderID
+GROUP BY ProductName, year(Orderdate), od.Quantity, p.UnitPrice
+ORDER BY UmsatzSummeProProdukt DESC

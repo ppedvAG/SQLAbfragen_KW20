@@ -79,7 +79,7 @@ AutoID int NOT NULL,
 Kennzeichen varchar(9) NOT NULL,
 Modell varchar(20) NULL,
 Anschaffungsdatum date NOT NULL
-PRIMARY KEY AutoID
+PRIMARY KEY (AutoID)
 )
 
 SELECT * FROM Fuhrpark

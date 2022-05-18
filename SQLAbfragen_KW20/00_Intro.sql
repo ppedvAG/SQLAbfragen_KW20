@@ -43,4 +43,6 @@ WHILE
 (IF)
 (Functions)
 
+*/
 
+SELECT * FROM ##TestTempGlobal

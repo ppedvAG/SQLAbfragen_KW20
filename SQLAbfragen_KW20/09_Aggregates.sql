@@ -137,8 +137,9 @@ Sum(Quantity* [Order Details].UnitPrice)as summe
 from Orders
 join Customers on orders.CustomerID = customers.CustomerID
 join [Order Details] on orders.OrderID = [Order Details].orderid
+WHERE Country = 'USA'
 GROUP BY CompanyName, Country
-HAVING Sum(Quantity* [Order Details].UnitPrice) > 10000 AND Country = 'USA'
+HAVING Sum(Quantity* [Order Details].UnitPrice) > 10000 
 
 --Wenn möglich, IMMER im WHERE und nicht im HAVING Filtern
 
@@ -146,3 +147,15 @@ HAVING Sum(Quantity* [Order Details].UnitPrice) > 10000 AND Country = 'USA'
 SELECT CompanyName as Kunde, COuntry as Land FROM Customers
 WHERE Country = 'Germany'
 Order by Kunde
+
+
+
+
+--Produkt "Chai" Gesamtverkaufszahlen nach Monaten im Jahr 1997
+
+SELECT month(o.OrderDate) AS Monat, SUM(od.Quantity) AS ANZAHL 
+FROM Northwind.dbo.Orders o 
+INNER JOIN Northwind.dbo.[Order Details] od ON o.OrderID = od.OrderID 
+INNER JOIN Northwind.dbo.Products p ON od.ProductID = p.ProductID 
+WHERE p.ProductName = 'Chai' AND year(o.OrderDate) = '1997' 
+GROUP BY month(o.OrderDate);
